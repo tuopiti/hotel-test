@@ -1,7 +1,5 @@
 package com.piti.java.hoteltesting.model;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -11,27 +9,25 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@Table(name ="rooms")
+@Data
+@Table(name ="hotels")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Room {
+public class Hotel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private Integer roomNumber;
-	private String roomType;
-	private BigDecimal roomPrice;
-	private boolean availability;
+	private String name;
+	private String address;
+	private String description;
+	private Integer rating;
+	private String imageUrl;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name ="hotel_id", referencedColumnName = "id")
-	private Hotel hotel;
+	@JoinColumn(name ="location_id", referencedColumnName = "id")
+	private Location location;
 }

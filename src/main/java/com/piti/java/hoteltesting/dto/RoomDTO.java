@@ -15,4 +15,5 @@ public class RoomDTO {
 	private String roomType;
 	private BigDecimal roomPrice;
 	private boolean availability;
+	private Integer hotelId;
 }

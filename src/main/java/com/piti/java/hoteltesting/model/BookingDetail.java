@@ -1,6 +1,7 @@
 package com.piti.java.hoteltesting.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,6 +32,12 @@ public class BookingDetail {
 	@ManyToOne
 	@JoinColumn(name = "room_id")
 	private Room room;
+	
+	@Column(name = "check_in")
+    private LocalDate checkInDate;
+
+    @Column(name = "check_out")
+    private LocalDate checkOutDate;
 	
     @Column(name = "total_price")
     private BigDecimal totalPrice;

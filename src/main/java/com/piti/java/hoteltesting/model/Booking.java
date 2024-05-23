@@ -19,7 +19,7 @@ import lombok.Setter;
 @Table(name = "bookings")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Booking {
+public class Booking extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

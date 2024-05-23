@@ -30,4 +30,8 @@ public class Hotel {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="location_id", referencedColumnName = "id")
 	private Location location;
+	
+	@ManyToOne
+	@JoinColumn(name = "owner_id")
+	private User owner;
 }

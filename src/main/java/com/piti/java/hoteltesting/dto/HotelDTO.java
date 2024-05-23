@@ -11,4 +11,5 @@ public class HotelDTO {
 	private Integer rating;
 	private String imageUrl;
 	private Long locationId;
+	private Long ownerId;
 }

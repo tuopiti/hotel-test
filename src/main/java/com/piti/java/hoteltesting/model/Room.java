@@ -21,11 +21,11 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Room {
+public class Room extends BaseEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
 	private Integer roomNumber;
 	private String roomType;
 	private BigDecimal roomPrice;
@@ -34,4 +34,5 @@ public class Room {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="hotel_id", referencedColumnName = "id")
 	private Hotel hotel;
+	
 }
